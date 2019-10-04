@@ -1,0 +1,103 @@
+import random
+
+passport_first_name = ["Amy", "Allison", "Arya", "Aly", "Alicia", "Anna", "Brittany", "Bella", "Brianna", "Beth", "Brandy",
+                    "Courtney", "Camille", "Clara", "Christina", "Cara", "Caitlin", "Dana", "Diana", "Dakota", "Dani",
+                    "Devon", "Danielle", "Darcy", "Dominique", "Ella", "Eva", "Erin", "Evelyn", "Eve", "Ellie", "Felicia",
+                    "Faye", "Faith", "Francesca", "Gloria", "Gwen", "Grace", "Gena", "Gabrielle", "Heather", "Hollie",
+                    "Hayden", "Hazel", "Hailey", "Helena", "Isabella", "Iris", "Julia", "Jennifer", "Jessica", "Julie",
+                    "Jo", "Jackie" "Aaron", "Abdul", "Adam", "Adrian", "Ahmed", "Alan", "Alex", "Alexis", "Blake", "Brad",
+                    "Brandon", "Bryant", "Byron", "Buddy", "Cameron", "Carl", "Carlos", "Carter", "Cody", "Chris", "Clark",
+                    "Dallas", "Daniel", "Donnie", "Dante", "Darell", "David", "Demetrius", "Derek", "Deon", "Domenic",
+                    "Evan", "Emilio", "Emmett", "Enrique", "Edward", "Ethan", "Eric", "Esteban", "Floyd", "Forest",
+                    "Frank", "Fred", "Floyd", "Fidel", "Felton", "Foster", "Gabriel", "Gene", "Geoffrey", "George",
+                    "Geraldo", "Graham", "Glen", "Greg"]
+
+#Last names begin after a single space, to display properly
+last_name = [" Smith", " Jones", " Brown", " Johnson", " Williams", " Miller", " Taylor", " Wilson", " Davis", " Harris", " Clark",
+             " Hall", " Thomas", " Thompson", " Moore", " Hill", " Walker", " Anderson", " Wright", " Martin", " Wood", " Allen"
+             " Garcia", " Martinez", " Robinson", " Rodriguez", " Lewis", " Lee", " Young", " Hernandez", " King", " Lopez",
+             " Scott", " Green", " Adams", " Baker", " Gonzalez", " Nelson", " Carter", " Mitchell", " Perez", " Roberts",
+             " Turner", " Phillips", " Campbell", " Parker", " Evans", " Edwards", " Collins", " Edwards", " Stewart", " Sanchez",]
+
+eye_color = ["Blue", "Brown", "Hazel", "Green", "Gray", "Amber"]
+
+nationality = ["The United States of America", "The Russian Federation", "The Islamic Republic of Afghanistan",
+               "The Republic of Albania", "The People's Democratic Republic of Algeria",
+               "The Principality of Andorra", "The Republic of Angola", "Antigua and Barbuda",
+               "The Argentine Republic", "The Republic of Armenia", "Australia", "The Republic of Austria",
+               "The Republic of Azerbaijan", "The Commonwealth of the Bahamas", "The Kingdom of Bahrain",
+               "The People's Republic of Bangladesh", "Barbados", "The Republic of Belarus",
+               "The Kingdom of Belgium", "Belize", "The Republic of Benin", "The Kingdom of Bhutan",
+               "The Plurinational State of Bolivia", "Bosnia and Herzegovina", "The Republic of Botswana",
+               "The Federative Republic of Brazil", "Brunei Darussalam", "The Republic of Bulgaria",
+               "Burkina Faso", "The Republic of Burundi", "Republic of Cabo Verde", "The Kingdom of Cambodia",
+               "The Republic of Cameroon", "Canada", "The Central African Republic", "The Republic of Chad",
+               "The Republic of Chile", "The People's Republic of China", "The Republic of Colombia",
+               "The Union of the Comoros", "The Republic of the Congo", "The Cook Islands",
+               "The Republic of Costa Rica", "The Republic of Croatia", "The Republic of Cuba",
+               "The Republic of Cyprus", "The Czech Republic", "The Republic of Côte d'Ivoire",
+               "The Democratic People's Republic of Korea", "The Democratic Republic of the Congo",
+               "The Kingdom of Denmark", "The Republic of Djibouti", "The Commonwealth of Dominica",
+               "The Dominican Republic", "The Republic of Ecuador", "The Arab Republic of Egypt",
+               "The Republic of El Salvador", "The Republic of Equatorial Guinea", "The State of Eritrea",
+               "The Republic of Estonia", "The Kingdom of Eswatini",
+               "The Federal Democratic Republic of Ethiopia", "Faroe Islands", "The Republic of Fiji",
+               "The Republic of Finland", "The French Republic", "The Gabonese Republic",
+               "The Republic of the Gambia", "Georgia", "The Federal Republic of Germany",
+               "The Republic of Ghana", "The Hellenic Republic", "Grenada", "The Republic of Guatemala",
+               "The Republic of Guinea", "The Republic of Guinea-Bissau", "The Co-operative Republic of Guyana",
+               "The Republic of Haiti", "The Republic of Honduras", "Hungary", "The Republic of Iceland",
+               "The Republic of India", "The Republic of Indonesia", "The Islamic Republic of Iran",
+               "The Republic of Iraq", "Ireland", "The State of Israel", "The Republic of Italy", "Jamaica",
+               "Japan", "The Hashemite Kingdom of Jordan", "The Republic of Kazakhstan", "The Republic of Kenya",
+               "The Republic of Kiribati", "The State of Kuwait", "The Kyrgyz Republic",
+               "The Lao People's Democratic Republic", "The Republic of Latvia", "The Lebanese Republic",
+               "The Kingdom of Lesotho", "The Republic of Liberia", "State of Libya",
+               "The Republic of Lithuania", "The Grand Duchy of Luxembourg", "The Republic of Madagascar",
+               "The Republic of Malawi", "Malaysia", "The Republic of Maldives", "The Republic of Mali",
+               "The Republic of Malta", "The Republic of the Marshall Islands",
+               "The Islamic Republic of Mauritania", "The Republic of Mauritius", "The United Mexican States",
+               "The Federated States of Micronesia", "The Principality of Monaco", "Mongolia", "Montenegro",
+               "The Kingdom of Morocco", "The Republic of Mozambique", "The Republic of the Union of Myanmar",
+               "The Republic of Namibia", "The Republic of Nauru", "The Federal Democratic Republic of Nepal",
+               "The Kingdom of the Netherlands", "New Zealand", "The Republic of Nicaragua",
+               "The Republic of the Niger", "The Federal Republic of Nigeria", "Niue",
+               "The Republic of North Macedonia", "The Kingdom of Norway", "The Sultanate of Oman",
+               "The Islamic Republic of Pakistan", "The Republic of Palau", "The Republic of Panama",
+               "Independent State of Papua New Guinea", "The Republic of Paraguay", "The Republic of Peru",
+               "The Republic of the Philippines", "The Republic of Poland", "The Portuguese Republic",
+               "The State of Qatar", "The Republic of Korea", "The Republic of Moldova", "Romania",
+               "The Republic of Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+               "Saint Vincent and the Grenadines", "The Independent State of Samoa", "The Republic of San Marino",
+               "The Democratic Republic of Sao Tome and Principe", "The Kingdom of Saudi Arabia",
+               "The Republic of Senegal", "The Republic of Serbia", "The Republic of Seychelles",
+               "The Republic of Sierra Leone", "The Republic of Singapore", "The Slovak Republic",
+               "The Republic of Slovenia", "Solomon Islands", "The Federal Republic of Somalia",
+               "The Republic of South Africa", "The Republic of South Sudan", "The Kingdom of Spain",
+               "The Democratic Socialist Republic of Sri Lanka", "The Republic of the Sudan",
+               "The Republic of Suriname", "The Kingdom of Sweden", "The Swiss Confederation",
+               "The Syrian Arab Republic", "The Republic of Tajikistan", "The Kingdom of Thailand",
+               "The Democratic Republic of Timor-Leste", "The Togolese Republic", "Tokelau",
+               "The Kingdom of Tonga", "The Republic of Trinidad and Tobago", "The Republic of Tunisia",
+               "The Republic of Turkey", "Turkmenistan", "Tuvalu", "The Republic of Uganda",
+               "Ukraine", "The United Arab Emirates", "The United Kingdom of Great Britain and Northern Ireland",
+               "The United Republic of Tanzania", "The Eastern Republic of Uruguay", "The Republic of Uzbekistan",
+               "The Republic of Vanuatu", "The Bolivarian Republic of Venezuela",
+               "The Socialist Republic of Viet Nam", "The Republic of Yemen", "The Republic of Zambia",
+               "The Republic of Zimbabwe"]
+
+first_name = random.choice(passport_first_name)
+last_name = random.choice(last_name)
+current_name = first_name + last_name
+age = random.randint(18, 120)
+current_nationality = random.choice(nationality)
+ft = random.randint(3, 8)
+inches = random.randint(0, 12)
+height = str(ft) + "'" + str(inches) + '"'
+current_eye_color = random.choice(eye_color)
+
+print("FIRST NAME: " + current_name)
+print("AGE: " + str(age))
+print("NATIONALITY: " + current_nationality)
+print("HEIGHT: " + height)
+print("EYE COLOR: " + current_eye_color)
