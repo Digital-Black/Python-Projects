@@ -1,0 +1,82 @@
+import random
+import time
+
+print("You failed to sneak up on the demon.\n")
+print("You drop your weapon.\n\n")
+
+def roll():
+    FirstRoll = True
+    while FirstRoll == True:
+        r = random.randint(0, 100)
+        if r < 10:
+            print("You roll " + str(r) + " to punch the demon: " + "The demon's roar sends you to the ground before you can get close.\n\n")
+            time.sleep(6)
+        if r > 9 and r < 30:
+            print("You roll " + str(r) + " to strike the demon: " + "You throw a fist through the air before a massive arm impacts your head. You crack your head against a wall.\n\n")
+            time.sleep(6)
+        if r > 29 and r < 50:
+            print("You roll " + str(r) + " to break bone: " + "You kick to backward its leg, but the demon catches and lifts your leg. You feel your teeth chip after you see an elbow coming at you.\n\n")
+            time.sleep(6)
+        if r > 49 and r < 75:
+            print("You roll " + str(r) + " to break bone: " + "You see a fist coming and you turn away, lifting your elbow to protect yourself.\n\n")
+            time.sleep(6)
+            print("You hear a loud popping sound as you're thrown back against a wall. Your arm is swelling up and there's bone poking out from the demon's hand.\n\n")
+            time.sleep(4)
+        if r > 74 and r < 100:
+            print("You roll " + str(r) + " to save yourself: " + "Impossibly strong hands hit your neck and clench. You're choking profusely and your strength is leaving.\n\n")
+            time.sleep(3)
+            print("You jolt awake terrified. You grip overtop the demon's hand while you slam your other wrist against it from below. You lock up the demon's wrist and it doubles over.\n\n")
+            time.sleep(3)
+            print("You try to pull the demon to the ground, but it thrashes. You feel and hear popping as the demon breaks its own arm to choke-slam you with the other.\n")
+            print("You are losing blood from a head wound.\n\n")
+            time.sleep(3)
+        if r > 89:
+            print("The demon body-slams you, sending you doubling over. You barely manage to get your arm around its neck as you both hit the ground.\n\n")
+            time.sleep(6)
+            print("The monster twists its way out of your arm leaving behind streaks of blood from it's head. An arm reaches up and claws rake your face.\n")
+            print("You are bleeding from wounds to the face.\n\n")
+            time.sleep(6)
+            print("You struggle to maintain consciousness.")
+            time.sleep(4)
+            print("Quest Abandoned: Kill Demon...")
+            print("Started Quest: Survive...\n\n")
+            time.sleep(2)
+            print("You jolt awake, in disbelief that you aren't dead. You feel teeth in your neck and your head and face hurt. Your blade is laying just out of reach.\n\n")
+            time.sleep(5)
+            FirstRoll = False
+            attemptingsave = True
+            if attemptingsave == True:
+                    save = random.randint(0, 100)
+                    if save < 10:
+                        print("You roll " + str(r) + " for strength: " + "You're hallucinating. Over and over you rush the blade into the demon's back before you wake up right where you were.\n\n")
+                        time.sleep(5)
+                    if save > 9 and save < 30:
+                        print("You roll " + str(r) + " for strength: " + "You brace your thumb against the end of your middle finger in a one-knuckle fist, and keep trying to break the ribs of the demon on top of you.\n\n")
+                        time.sleep(5)
+                    if save > 29 and save < 50:
+                        print("You roll " + str(r) + " for strength: " + "You manage to hook your thumb in its eye and pry it off of you, but two hands grab your head and beat it against the ground.\n\n")
+                        time.sleep(5)
+                    if save > 49 and save < 75:
+                        print("You roll " + str(r) + " for strength: " + "You take a deep breath and push the demon back just far enough to rail it with an elbow, but you just end up fighting it ont the ground again.\n\n")
+                        time.sleep(5)
+                    if save > 74 and save < 89:
+                        print("You roll " + str(r) + " for strength: " + "Your vision goes red and you start bashing your head into its skull until it's painful and wet.\n\n")
+                        time.sleep(5)
+                    if save > 89:
+                        print("You roll " + str(r) + " for strength: " + "Your vision goes red and you start screaming. You lunge for the blade and repeatedly stab the demon's back.\n\n")
+                        time.sleep(5)
+                        print("The world is a blur as you wildly attack the monster with your weapon until you realize it isn't moving anymore.\n\n")
+                        time.sleep(5)
+                        print("You bury your weapon into your foe and let go, trying to catch your breath.\n\n")
+                        time.sleep(5)
+                        print("You feel a surge of adrenaline and the dark cave looks brighter. Lights and shapes you haven't seen before start covering the stone.\n\n")
+                        time.sleep(5)
+                        print("It starts getting hard to hear anything.\n\n")
+                        time.sleep(5)
+                        print("Your head feels warm and your vision begins to fade.\n\n")
+                        time.sleep(5)
+                        print("You have died of your injuries.\n\n")
+                        time.sleep(5)
+
+while 1==1:
+    roll()
